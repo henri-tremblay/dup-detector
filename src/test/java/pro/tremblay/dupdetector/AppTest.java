@@ -1,4 +1,4 @@
-package pro.tremblay;
+package pro.tremblay.dupdetector;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectCodeStyleSettingsManager">
+    <option name="PER_PROJECT_SETTINGS">
+      <value>
+        <option name="LINE_SEPARATOR" value="&#10;" />
+        <option name="CLASS_COUNT_TO_USE_IMPORT_ON_DEMAND" value="999999" />
+        <option name="NAMES_COUNT_TO_USE_IMPORT_ON_DEMAND" value="0" />
+        <option name="PACKAGES_TO_USE_IMPORT_ON_DEMAND">
+          <value />
+        </option>
+        <option name="IMPORT_LAYOUT_TABLE">
+          <value>
+            <package name="" withSubpackages="true" static="false" />
+            <package name="org" withSubpackages="true" static="false" />
+            <emptyLine />
+            <package name="EDU" withSubpackages="true" static="false" />
+            <emptyLine />
+            <package name="com" withSubpackages="true" static="false" />
+            <emptyLine />
+            <package name="gnu" withSubpackages="true" static="false" />
+            <emptyLine />
+            <package name="java" withSubpackages="true" static="false" />
+            <emptyLine />
+            <package name="javax" withSubpackages="true" static="false" />
+            <emptyLine />
+            <package name="bsh" withSubpackages="true" static="false" />
+            <emptyLine />
+            <package name="junit" withSubpackages="true" static="false" />
+            <emptyLine />
+            <package name="" withSubpackages="true" static="true" />
+          </value>
+        </option>
+        <option name="RIGHT_MARGIN" value="140" />
+        <option name="ALIGN_MULTILINE_BINARY_OPERATION" value="true" />
+        <option name="SPACE_WITHIN_ARRAY_INITIALIZER_BRACES" value="true" />
+        <option name="SPACE_AFTER_TYPE_CAST" value="false" />
+        <option name="SPACE_BEFORE_ARRAY_INITIALIZER_LBRACE" value="true" />
+        <option name="METHOD_CALL_CHAIN_WRAP" value="5" />
+        <option name="KEEP_SIMPLE_BLOCKS_IN_ONE_LINE" value="true" />
+        <option name="KEEP_SIMPLE_METHODS_IN_ONE_LINE" value="true" />
+        <XML>
+          <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true" />
+        </XML>
+        <ADDITIONAL_INDENT_OPTIONS fileType="gsp">
+          <option name="INDENT_SIZE" value="2" />
+        </ADDITIONAL_INDENT_OPTIONS>
+        <ADDITIONAL_INDENT_OPTIONS fileType="scala">
+          <option name="INDENT_SIZE" value="2" />
+          <option name="TAB_SIZE" value="2" />
+        </ADDITIONAL_INDENT_OPTIONS>
+        <codeStyleSettings language="Groovy">
+          <option name="ALIGN_MULTILINE_BINARY_OPERATION" value="true" />
+          <option name="SPACE_AFTER_TYPE_CAST" value="false" />
+          <option name="METHOD_CALL_CHAIN_WRAP" value="5" />
+          <option name="KEEP_SIMPLE_BLOCKS_IN_ONE_LINE" value="true" />
+          <option name="PARENT_SETTINGS_INSTALLED" value="true" />
+          <indentOptions>
+            <option name="INDENT_SIZE" value="2" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="JAVA">
+          <option name="ELSE_ON_NEW_LINE" value="true" />
+          <option name="CATCH_ON_NEW_LINE" value="true" />
+          <option name="FINALLY_ON_NEW_LINE" value="true" />
+          <option name="ALIGN_MULTILINE_BINARY_OPERATION" value="true" />
+          <option name="SPACE_WITHIN_ARRAY_INITIALIZER_BRACES" value="true" />
+          <option name="SPACE_BEFORE_IF_PARENTHESES" value="false" />
+          <option name="SPACE_BEFORE_WHILE_PARENTHESES" value="false" />
+          <option name="SPACE_BEFORE_FOR_PARENTHESES" value="false" />
+          <option name="SPACE_BEFORE_TRY_PARENTHESES" value="false" />
+          <option name="SPACE_BEFORE_CATCH_PARENTHESES" value="false" />
+          <option name="SPACE_BEFORE_SWITCH_PARENTHESES" value="false" />
+          <option name="SPACE_BEFORE_SYNCHRONIZED_PARENTHESES" value="false" />
+          <option name="SPACE_BEFORE_ARRAY_INITIALIZER_LBRACE" value="true" />
+          <option name="METHOD_CALL_CHAIN_WRAP" value="5" />
+          <option name="KEEP_SIMPLE_BLOCKS_IN_ONE_LINE" value="true" />
+          <option name="KEEP_SIMPLE_METHODS_IN_ONE_LINE" value="true" />
+          <option name="IF_BRACE_FORCE" value="3" />
+          <option name="DOWHILE_BRACE_FORCE" value="3" />
+          <option name="WHILE_BRACE_FORCE" value="3" />
+          <option name="FOR_BRACE_FORCE" value="3" />
+          <option name="PARENT_SETTINGS_INSTALLED" value="true" />
+          <indentOptions>
+            <option name="CONTINUATION_INDENT_SIZE" value="4" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="JavaScript">
+          <option name="ALIGN_MULTILINE_BINARY_OPERATION" value="true" />
+          <option name="KEEP_SIMPLE_BLOCKS_IN_ONE_LINE" value="true" />
+          <option name="KEEP_SIMPLE_METHODS_IN_ONE_LINE" value="true" />
+          <option name="PARENT_SETTINGS_INSTALLED" value="true" />
+        </codeStyleSettings>
+        <codeStyleSettings language="SQL">
+          <indentOptions>
+            <option name="CONTINUATION_INDENT_SIZE" value="8" />
+            <option name="TAB_SIZE" value="4" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="TypeScript">
+          <option name="ALIGN_MULTILINE_BINARY_OPERATION" value="true" />
+          <option name="KEEP_SIMPLE_BLOCKS_IN_ONE_LINE" value="true" />
+          <option name="KEEP_SIMPLE_METHODS_IN_ONE_LINE" value="true" />
+          <option name="PARENT_SETTINGS_INSTALLED" value="true" />
+        </codeStyleSettings>
+      </value>
+    </option>
+    <option name="USE_PER_PROJECT_SETTINGS" value="true" />
+  </component>
+</project>
