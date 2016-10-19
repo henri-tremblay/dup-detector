@@ -38,7 +38,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>pro.tremblay.dupdetector.Main</mainClass>
+              <mainClass>pro.tremblay.dupdetector.App</mainClass>
             </manifest>
           </archive>
         </configuration>
