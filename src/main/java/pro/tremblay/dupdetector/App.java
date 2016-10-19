@@ -11,8 +11,10 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.stream.Stream;
@@ -20,6 +22,14 @@ import java.util.stream.Stream;
 public class App {
 
     private static final ConcurrentMap<String, List<Path>> duplicates = new ConcurrentHashMap<>();
+    private static final ConcurrentMap<Path, Object> emptyFiles = new ConcurrentHashMap<>();
+
+    private static final Set<Path> IGNORED = new HashSet<>();
+
+    static {
+        IGNORED.add(Paths.get(".DS_Store"));
+        IGNORED.add(Paths.get("thumbs.db"));
+    }
 
     public static void main(String... args) throws IOException {
         if(args.length != 1) {
@@ -29,7 +39,6 @@ public class App {
         }
 
         Path root = Paths.get(args[0]);
-
 
         try(Stream<Path> files = Files.find(root, Integer.MAX_VALUE, App::isFile)) {
             files.parallel()
@@ -43,6 +52,12 @@ public class App {
             .filter(entry -> entry.getValue().size() > 1)
             .map(entry -> entry.getValue())
             .forEach(App::processDuplicate);
+
+        if(!emptyFiles.isEmpty()) {
+            System.out.println();
+            System.out.println("Empty files:");
+            emptyFiles.keySet().forEach(e -> System.out.println("\t" + e));
+        }
     }
 
     private static void processDuplicate(List<Path> paths) {
@@ -71,9 +86,13 @@ public class App {
     }
 
     private static void processFile(Path path) {
+        if(path.toFile().length() == 0) {
+            emptyFiles.put(path, path);
+            return;
+        }
         byte[] buffer = new byte[2048];
         try(InputStream in = Files.newInputStream(path, StandardOpenOption.READ)) {
-            int count = in.read(buffer);
+            in.read(buffer);
             String hash = sha1(buffer);
             duplicates.compute(
                 hash,
@@ -112,6 +131,6 @@ public class App {
     }
 
     private static boolean isFile(Path path, BasicFileAttributes attributes) {
-        return !attributes.isDirectory();
+        return !attributes.isDirectory() && !IGNORED.contains(path.getFileName());
     }
 }

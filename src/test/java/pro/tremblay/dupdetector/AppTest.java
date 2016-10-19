@@ -25,13 +25,14 @@ public class AppTest {
         }
 
         String[] expected = {
-            "src/test/data/a/first.txt",
-            "src/test/data/b/first-two.txt",
-            "src/test/data/a/third.txt",
-            "src/test/data/b/third-two.txt",
-            "src/test/data/a/four.txt",
-            "src/test/data/b/four-one.txt",
-            "src/test/data/four-two.txt"
+            "\tsrc/test/data/a/first.txt",
+            "\tsrc/test/data/b/first-two.txt",
+            "\tsrc/test/data/a/third.txt",
+            "\tsrc/test/data/b/third-two.txt",
+            "\tsrc/test/data/a/four.txt",
+            "\tsrc/test/data/b/four-one.txt",
+            "\tsrc/test/data/four-two.txt",
+            "\tsrc/test/data/empty.txt"
         };
 
         Arrays.stream(expected).forEach(e -> assertTrue(result, result.contains(e)));
