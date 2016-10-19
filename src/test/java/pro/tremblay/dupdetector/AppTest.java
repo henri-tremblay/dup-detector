@@ -25,9 +25,13 @@ public class AppTest {
         }
 
         String[] expected = {
-            "Possible duplicates: src/test/data/a/first.txt,src/test/data/b/first-two.txt",
-            "Possible duplicates: src/test/data/a/third.txt,src/test/data/b/third-two.txt",
-            "Possible duplicates: src/test/data/a/four.txt,src/test/data/b/four-one.txt,src/test/data/four-two.txt",
+            "src/test/data/a/first.txt",
+            "src/test/data/b/first-two.txt",
+            "src/test/data/a/third.txt",
+            "src/test/data/b/third-two.txt",
+            "src/test/data/a/four.txt",
+            "src/test/data/b/four-one.txt",
+            "src/test/data/four-two.txt"
         };
 
         Arrays.stream(expected).forEach(e -> assertTrue(result, result.contains(e)));
