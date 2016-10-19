@@ -1,6 +1,5 @@
 package pro.tremblay.dupdetector;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
@@ -13,9 +12,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class App {
@@ -48,17 +47,19 @@ public class App {
 
     private static void processDuplicate(List<Path> paths) {
         for(int i = 0; i < paths.size(); i++) {
+            Path first = paths.get(i);
             for(int j = i + 1; j < paths.size(); j++) {
-                File first = paths.get(i).toFile();
-                File second = paths.get(j).toFile();
-                if(first.length() != second.length()) {
+                Path second = paths.get(j);
+                if(first.toFile().length() != second.toFile().length()) {
                     continue; // false positive
                 }
-
+                if(!Objects.equals(fullSha1(first), fullSha1(second))) {
+                    continue; // false positive
+                }
+                System.out.printf("Possible duplicates:%n\t%s%n\t%s%n", first, second);
             }
 
         }
-        System.out.println("Possible duplicates: " + paths.stream().map(p -> p.toString()).collect(Collectors.joining(",")));
     }
 
     private static void processFile(Path path) {
@@ -90,6 +91,16 @@ public class App {
             throw new RuntimeException(e);
         }
         return new String(md.digest(buffer));
+    }
+
+    private static String fullSha1(Path path) {
+        try {
+            byte[] buffer = Files.readAllBytes(path);
+            return sha1(buffer);
+        }
+        catch(IOException e) {
+            throw new UncheckedIOException(e);
+        }
     }
 
     private static boolean isFile(Path path, BasicFileAttributes attributes) {
