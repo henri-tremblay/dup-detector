@@ -48,6 +48,8 @@ public class App {
     private static void processDuplicate(List<Path> paths) {
         for(int i = 0; i < paths.size(); i++) {
             Path first = paths.get(i);
+            List<Path> same = new ArrayList<>(paths.size());
+            same.add(first);
             for(int j = i + 1; j < paths.size(); j++) {
                 Path second = paths.get(j);
                 if(first.toFile().length() != second.toFile().length()) {
@@ -56,9 +58,15 @@ public class App {
                 if(!Objects.equals(fullSha1(first), fullSha1(second))) {
                     continue; // false positive
                 }
-                System.out.printf("Possible duplicates:%n\t%s%n\t%s%n", first, second);
+                same.add(second);
             }
-
+            if(same.size() > 1) {
+                System.out.println("Possible duplicates:");
+                same.stream()
+                    .sorted()
+                    .forEach(p -> System.out.println("\t" + p));
+                same.forEach(p -> paths.remove(p));
+            }
         }
     }
 
