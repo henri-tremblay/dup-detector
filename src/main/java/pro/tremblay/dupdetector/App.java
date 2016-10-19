@@ -33,7 +33,7 @@ public class App {
 
 
         try(Stream<Path> files = Files.find(root, Integer.MAX_VALUE, App::isFile)) {
-            files//.parallel()
+            files.parallel()
                 .forEach(App::processFile);
         }
         catch(UncheckedIOException e) {
